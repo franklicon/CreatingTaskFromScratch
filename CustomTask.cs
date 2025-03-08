@@ -102,6 +102,8 @@ public class CustomTask
         return task;
     }
 
+    public CustomTaskAwaiter GetAwaiter() => new(this);
+
     private void SetResult() => CompleteTask(null);
     
     private void SetException(Exception exception) => CompleteTask(exception);
