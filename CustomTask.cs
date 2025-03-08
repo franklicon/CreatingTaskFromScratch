@@ -39,6 +39,16 @@ public class CustomTask
         
         return task;
     }
+
+    public static CustomTask Delay(TimeSpan delay)
+    {
+        CustomTask task = new();
+
+        new Timer(_ => task.SetResult())
+            .Change(delay, Timeout.InfiniteTimeSpan);
+        
+        return task;
+    }
     
     public void Wait()
     {
