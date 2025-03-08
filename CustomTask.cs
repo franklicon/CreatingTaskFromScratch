@@ -112,7 +112,7 @@ public class CustomTask
         {
             if (_completed)
                 throw new InvalidOperationException(
-                    "Task already completed. Cannot set an exception of a completed Task");
+                    "Task already completed. Cannot set a result of a completed Task");
             
             _completed = true;
             _exception = exception;
